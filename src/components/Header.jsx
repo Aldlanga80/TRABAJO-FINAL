@@ -9,10 +9,10 @@ const Header = () => {
   }
 
   return (
-    <header >
-      <img src="https://upload.wikimedia.org/wikipedia/commons/8/85/Logo-Test.png" alt="imagen de logo" />
-      <nav id="nav-list">
-        <ul>
+    <header className="header">
+      <img className="logo" src="src/assets/Logo-Test.png" alt="imagen de logo" />
+      <nav className="navbar">
+        <ul className="nav-link">
           {/* Cambiar elementos a por componentes Link de react-router-dom */}
           {
             user && <>

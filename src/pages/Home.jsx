@@ -86,92 +86,95 @@ const Home = () => {
 
   return (
     <Layout>
-      <section>
-        <h1 className="home-title">Bienvenido a Nuestra Tienda</h1>
-        <p>Descubrí una selección exclusiva de productos para vos. Calidad, confianza y atención personalizada.</p>
-      </section>
+      <div className="home">
+        <section>
+          <h1 className="home-title">Bienvenido a Nuestra Tienda</h1>
+          <p>Descubrí una selección exclusiva de productos para vos. Calidad, confianza y atención personalizada.</p>
+        </section>
 
-      <section>
-        <h2>¿Por qué elegirnos?</h2>
-        <ul>
-          <li>
-            <h3>Envíos a todo el país</h3>
-            <p>Recibí tu compra en la puerta de tu casa estés donde estés.</p>
-          </li>
-          <li>
-            <h3>Pagos seguros</h3>
-            <p>Trabajamos con plataformas que garantizan tu seguridad.</p>
-          </li>
-          <li>
-            <h3>Atención personalizada</h3>
-            <p>Estamos disponibles para ayudarte en todo momento.</p>
-          </li>
-        </ul>
-      </section>
+        <section>
+          <h2>¿Por qué elegirnos?</h2>
+          <ul>
+            <li>
+              <h3>Envíos a todo el país</h3>
+              <p>Recibí tu compra en la puerta de tu casa estés donde estés.</p>
+            </li>
+            <li>
+              <h3>Pagos seguros</h3>
+              <p>Trabajamos con plataformas que garantizan tu seguridad.</p>
+            </li>
+            <li>
+              <h3>Atención personalizada</h3>
+              <p>Estamos disponibles para ayudarte en todo momento.</p>
+            </li>
+          </ul>
+        </section>
 
-      <section>
-        <h2>Nuestros productos</h2>
-        <p>Elegí entre nuestras categorías más populares.</p>
+        <section>
+          <h2>Nuestros productos</h2>
+          <p>Elegí entre nuestras categorías más populares.</p>
 
 
-        {
-          showPopup && <section className="popup-edit">
-            <h2>Editando producto.</h2>
-            <button onClick={() => setShowPopup(null)}>Cerrar</button>
-            <form onSubmit={handleUpdate}>
-              <input
-                type="text"
-                placeholder="Ingrese el titulo"
-                value={titleEdit}
-                onChange={(e) => setTitleEdit(e.target.value)}
-              />
-              <input
-                type="number"
-                placeholder="Ingrese el precio"
-                value={priceEdit}
-                onChange={(e) => setPriceEdit(e.target.value)}
-              />
-              <textarea
-                placeholder="Ingrese la descripción"
-                value={descriptionEdit}
-                onChange={(e) => setDescriptionEdit(e.target.value)}
-              ></textarea>
-              <input
-                type="text"
-                placeholder="Ingrese la categoria"
-                value={categoryEdit}
-                onChange={(e) => setCategoryEdit(e.target.value)}
-              />
-              <input
-                type="text"
-                placeholder="Ingrese la URL de la imagen"
-                value={imageEdit}
-                onChange={(e) => setImageEdit(e.target.value)}
-              />
-              <button>Actualizar</button>
-            </form>
-          </section>
-        }
-
-        <div>
           {
-            products.map((product) => <div key={product.id}>
-              <h2 key={product.id}>{product.title}</h2>
-              <img width="80px" src={product.image} alt={`Imagen de ${product.title}`} />
-              <p>${product.price}</p>
-              <p>{product.description}</p>
-              <p><strong>{product.category}</strong></p>
-              {
-                user && <div>
-                  <button onClick={() => handleOpenEdit(product)}>Actualizar</button>
-                  <button onClick={() => handleDelete(product.id)}>Borrar</button>
-                </div>
-              }
-            </div>)
+            showPopup && <section className="popup-edit">
+              <h2>Editando producto.</h2>
+              <button onClick={() => setShowPopup(null)}>Cerrar</button>
+              <form onSubmit={handleUpdate}>
+                <input
+                  type="text"
+                  placeholder="Ingrese el titulo"
+                  value={titleEdit}
+                  onChange={(e) => setTitleEdit(e.target.value)}
+                />
+                <input
+                  type="number"
+                  placeholder="Ingrese el precio"
+                  value={priceEdit}
+                  onChange={(e) => setPriceEdit(e.target.value)}
+                />
+                <textarea
+                  placeholder="Ingrese la descripción"
+                  value={descriptionEdit}
+                  onChange={(e) => setDescriptionEdit(e.target.value)}
+                ></textarea>
+                <input
+                  type="text"
+                  placeholder="Ingrese la categoria"
+                  value={categoryEdit}
+                  onChange={(e) => setCategoryEdit(e.target.value)}
+                />
+                <input
+                  type="text"
+                  placeholder="Ingrese la URL de la imagen"
+                  value={imageEdit}
+                  onChange={(e) => setImageEdit(e.target.value)}
+                />
+                <button>Actualizar</button>
+              </form>
+            </section>
           }
-        </div>
-      </section>
-    </Layout>
+
+          <div>
+            {
+              products.map((product) => <div key={product.id}>
+                <h2 key={product.id}>{product.title}</h2>
+                <img width="80px" src={product.image} alt={`Imagen de ${product.title}`} />
+                <p>${product.price}</p>
+                <p>{product.description}</p>
+                <p><strong>{product.category}</strong></p>
+                {
+                  user && <div>
+                    <button onClick={() => handleOpenEdit(product)}>Actualizar</button>
+                    <button onClick={() => handleDelete(product.id)}>Borrar</button>
+                  </div>
+                }
+              </div>)
+            }
+          </div>
+        </section>
+      </div>
+
+    </Layout >
   )
 }
 
