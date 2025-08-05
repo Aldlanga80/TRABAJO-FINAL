@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
-    <footer className="error">
-      <p>Sitio desarrollado por <a href="https://www.linkedin.com/in/gabriel-alberini/" target="_blank">Gabriel Alberini</a></p>
+    <footer className="footer">
+      <p>&copy;2025 Sitio desarrollado por <a href="https://github.com/Aldlanga80" target="_blank">Aldo Langa</a></p>
     </footer>
   )
 }
