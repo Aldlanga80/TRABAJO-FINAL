@@ -1,0 +1,58 @@
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: cyan;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px purple;
+  width: 320px;
+}
+
+.card h1 h2 {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.user-login {
+  font-weight: bold;
+}
+
+.password-login {
+  font-weight: bold;
+}
+
+.form-login {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 16px;
+  border: 1px solid black;
+  border-radius: 6px;
+}
+
+.button-login {
+  padding: 10px;
+  font-size: large;
+  font-weight: bold;
+  background-color: plum;
+  color: black;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.button-login:hover {
+  background-color: palevioletred;
+}

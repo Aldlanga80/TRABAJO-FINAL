@@ -24,29 +24,33 @@ const Login = () => {
 
   return (
     <Layout>
-      <h1>Inicia sesión</h1>
+      <div className="card-container">
+        <div className="card">
+          <h1>Inicia sesión</h1>
 
-      <section>
-        <h2>Hola, bienvenido de nuevo</h2>
-        <p>johnd, m38rmF$</p>
-        <form onSubmit={handleLogin}>
-          <div>
-            <label>Nombre de usuario:</label>
-            <input
-              type="text"
-              onChange={(e) => setUsername(e.target.value)}
-              value={username} />
-          </div>
-          <div>
-            <label>Contraseña:</label>
-            <input
-              type="password"
-              onChange={(e) => setPassword(e.target.value)}
-              value={password} />
-          </div>
-          <button>Ingresar</button>
-        </form>
-      </section>
+          <section>
+            <h2>Hola, bienvenido de nuevo</h2>
+            <p>johnd, m38rmF$</p>
+            <form className="form-login" onSubmit={handleLogin}>
+              <div className="user-login">
+                <label>Nombre de usuario:</label>
+                <input className="input-login"
+                  type="text"
+                  onChange={(e) => setUsername(e.target.value)}
+                  value={username} />
+              </div>
+              <div className="password-login">
+                <label>Contraseña:</label>
+                <input className="input-login"
+                  type="password"
+                  onChange={(e) => setPassword(e.target.value)}
+                  value={password} />
+              </div>
+              <button className="button-login">Ingresar</button>
+            </form>
+          </section>
+        </div>
+      </div>
     </Layout>
   )
 }
