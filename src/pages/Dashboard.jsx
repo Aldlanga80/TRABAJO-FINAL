@@ -46,41 +46,43 @@ const Dashboard = () => {
 
   return (
     <Layout>
-      <h1>Panel de Administración</h1>
+      <div className="dashbord-card">
+        <div className="card-dash">
+          <h1>Panel de Administración</h1>
 
-      <section>
-        <h2>Cargar nuevo producto</h2>
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label>Nombre del producto:</label>
-            <input type="text" name="nombre" onChange={(e) => setName(e.target.value)} value={name} />
-          </div>
+          <h2>Cargar nuevo producto</h2>
+          <form className="product-add" onSubmit={handleSubmit}>
+            <div>
+              <label>Nombre del producto:</label>
+              <input className="input-name" type="text" name="nombre" onChange={(e) => setName(e.target.value)} value={name} />
+            </div>
 
-          <div>
-            <label>Precio:</label>
-            <input type="number" name="precio" onChange={(e) => setPrice(e.target.value)} value={price} />
-          </div>
+            <div>
+              <label>Precio:</label>
+              <input className="input-price" type="number" name="precio" onChange={(e) => setPrice(e.target.value)} value={price} />
+            </div>
 
-          <div>
-            <label>Descripción:</label>
-            <textarea name="descripcion" rows="4" onChange={(e) => setDescription(e.target.value)} value={description} />
-          </div>
+            <div>
+              <label>Descripción:</label>
+              <textarea className="input-description" name="descripcion" rows="4" onChange={(e) => setDescription(e.target.value)} value={description} />
+            </div>
+
+            {
+              error && <p className="error">{error}</p>
+            }
+
+            <button className="button-add">Guardar producto</button>
+          </form>
 
           {
-            error && <p className="error">{error}</p>
+            product && <div>
+              <h3>{product.title}</h3>
+              <p>${product.price}</p>
+              <p>{product.description}</p>
+            </div>
           }
-
-          <button>Guardar producto</button>
-        </form>
-
-        {
-          product && <div>
-            <h3>{product.title}</h3>
-            <p>${product.price}</p>
-            <p>{product.description}</p>
-          </div>
-        }
-      </section>
+        </div>
+      </div>
     </Layout>
   )
 }

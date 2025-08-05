@@ -1,0 +1,43 @@
+.card-dash {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: beige;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px black;
+  width: auto;
+  height: 100vh;
+}
+
+.product-add {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-name,
+.input-price,
+.input-description {
+  display: flex;
+  justify-content: baseline;
+  align-self: start;
+  padding: 10px;
+  margin-bottom: 16px;
+  border-bottom: 1 solid black;
+  border-radius: 6px;
+}
+
+.button-add {
+  display: block;
+  width: 250px;
+  padding: 10px;
+  font-size: large;
+  font-weight: bold;
+  background-color: aquamarine;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.button-add:hover {
+  background-color: aqua;
+}
