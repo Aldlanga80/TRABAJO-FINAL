@@ -34,46 +34,47 @@ const Register = () => {
 
   return (
     <Layout>
-      <h1>Registrate</h1>
+      <div className="card-container">
+        <div className="card-register">
+          <h1>Registrate</h1>
 
-      <section>
-        <h2>Hola, bienvenido</h2>
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label>Username:</label>
-            <input
-              type="text"
-              onChange={(e) => setUsername(e.target.value)}
-              value={username}
-            />
-          </div>
-          <div>
-            <label>Correo electrónico:</label>
-            <input
-              type="email"
-              onChange={(e) => setEmail(e.target.value)}
-              value={email}
-            />
-          </div>
-          <div>
-            <label>Contraseña:</label>
-            <input
-              type="password"
-              onChange={(e) => setPassword(e.target.value)}
-              value={password}
-            />
-          </div>
-          <button>Ingresar</button>
-        </form>
+          <section>
+            <h2>Hola, bienvenido</h2>
+            <form className="form-register" onSubmit={handleSubmit}>
+              <div className="user-register">
+                <input className="input-register" placeholder="Nombre de usuario"
+                  type="text"
+                  onChange={(e) => setUsername(e.target.value)}
+                  value={username}
+                />
+              </div>
+              <div className="email-register">
+                <input className="input-register" placeholder="Correo electrónico"
+                  type="email"
+                  onChange={(e) => setEmail(e.target.value)}
+                  value={email}
+                />
+              </div>
+              <div className="password-register">
+                <input className="input-register" placeholder="Contraseña"
+                  type="password"
+                  onChange={(e) => setPassword(e.target.value)}
+                  value={password}
+                />
+              </div>
+              <button className="button-register">Ingresar</button>
+            </form>
 
-        {
-          error && <p style={{ color: "red" }}>{error}</p>
-        }
-        {
-          success && <p style={{ color: "green" }}>{success}</p>
-        }
-      </section>
-    </Layout>
+            {
+              error && <p style={{ color: "red", fontWeight: "bolder", textTransform: "uppercase" }}>{error}</p>
+            }
+            {
+              success && <p style={{ color: "green", fontWeight: "bolder", textTransform: "uppercase" }}>{success}</p>
+            }
+          </section>
+        </div>
+      </div>
+    </Layout >
   )
 }
 
