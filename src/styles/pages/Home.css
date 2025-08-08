@@ -1,3 +1,20 @@
 .home {
   background: red;
 }
+
+.grid-column {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.grim-row {
+  padding: 20px;
+  font-size: 15px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  text-align: center;
+}

@@ -113,63 +113,63 @@ const Home = () => {
         <section>
           <h2>Nuestros productos</h2>
           <p>Elegí entre nuestras categorías más populares.</p>
-
-
-          {
-            showPopup && <section className="popup-edit">
-              <h2>Editando producto.</h2>
-              <button onClick={() => setShowPopup(null)}>Cerrar</button>
-              <form onSubmit={handleUpdate}>
-                <input
-                  type="text"
-                  placeholder="Ingrese el titulo"
-                  value={titleEdit}
-                  onChange={(e) => setTitleEdit(e.target.value)}
-                />
-                <input
-                  type="number"
-                  placeholder="Ingrese el precio"
-                  value={priceEdit}
-                  onChange={(e) => setPriceEdit(e.target.value)}
-                />
-                <textarea
-                  placeholder="Ingrese la descripción"
-                  value={descriptionEdit}
-                  onChange={(e) => setDescriptionEdit(e.target.value)}
-                ></textarea>
-                <input
-                  type="text"
-                  placeholder="Ingrese la categoria"
-                  value={categoryEdit}
-                  onChange={(e) => setCategoryEdit(e.target.value)}
-                />
-                <input
-                  type="text"
-                  placeholder="Ingrese la URL de la imagen"
-                  value={imageEdit}
-                  onChange={(e) => setImageEdit(e.target.value)}
-                />
-                <button>Actualizar</button>
-              </form>
-            </section>
-          }
-
           <div>
             {
-              products.map((product) => <div key={product.id}>
-                <h2 key={product.id}>{product.title}</h2>
-                <img width="80px" src={product.image} alt={`Imagen de ${product.title}`} />
-                <p>${product.price}</p>
-                <p>{product.description}</p>
-                <p><strong>{product.category}</strong></p>
-                {
-                  user && <div>
-                    <button onClick={() => handleOpenEdit(product)}>Actualizar</button>
-                    <button onClick={() => handleDelete(product.id)}>Borrar</button>
-                  </div>
-                }
-              </div>)
+              showPopup && <section className="popup-edit">
+                <h2>Editando producto.</h2>
+                <button onClick={() => setShowPopup(null)}>Cerrar</button>
+                <form onSubmit={handleUpdate}>
+                  <input
+                    type="text"
+                    placeholder="Ingrese el titulo"
+                    value={titleEdit}
+                    onChange={(e) => setTitleEdit(e.target.value)}
+                  />
+                  <input
+                    type="number"
+                    placeholder="Ingrese el precio"
+                    value={priceEdit}
+                    onChange={(e) => setPriceEdit(e.target.value)}
+                  />
+                  <textarea
+                    placeholder="Ingrese la descripción"
+                    value={descriptionEdit}
+                    onChange={(e) => setDescriptionEdit(e.target.value)}
+                  ></textarea>
+                  <input
+                    type="text"
+                    placeholder="Ingrese la categoria"
+                    value={categoryEdit}
+                    onChange={(e) => setCategoryEdit(e.target.value)}
+                  />
+                  <input
+                    type="text"
+                    placeholder="Ingrese la URL de la imagen"
+                    value={imageEdit}
+                    onChange={(e) => setImageEdit(e.target.value)}
+                  />
+                  <button>Actualizar</button>
+                </form>
+              </section>
             }
+
+            <div className="grid-column">
+              {
+                products.map((product) => <div key={product.id} className="grid-row">
+                  <h2 key={product.id}>{product.title}</h2>
+                  <img width="80px" src={product.image} alt={`Imagen de ${product.title}`} className="product-img" />
+                  <p className="price">${product.price}</p>
+                  <p>{product.description}</p>
+                  <p><strong>{product.category}</strong></p>
+                  {
+                    user && <div className="buttons">
+                      <button onClick={() => handleOpenEdit(product)}>Actualizar</button>
+                      <button onClick={() => handleDelete(product.id)}>Borrar</button>
+                    </div>
+                  }
+                </div>)
+              }
+            </div>
           </div>
         </section>
       </div>
