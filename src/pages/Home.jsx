@@ -87,8 +87,8 @@ const Home = () => {
   return (
     <Layout>
       <div className="home">
-        <section>
-          <h1 className="home-title">Bienvenido a Nuestra Tienda</h1>
+        <section className="home-title">
+          <h1>Bienvenido a Nuestra Tienda</h1>
           <p>Descubrí una selección exclusiva de productos para vos. Calidad, confianza y atención personalizada.</p>
         </section>
 
@@ -154,21 +154,22 @@ const Home = () => {
             }
 
             <div className="grid-column">
-              {
-                products.map((product) => <div key={product.id} className="grid-row">
+              {products.map((product) => (
+                <div key={product.id} className="grid-row">
                   <h2 key={product.id}>{product.title}</h2>
-                  <img width="80px" src={product.image} alt={`Imagen de ${product.title}`} className="product-img" />
+                  <img
+                    src={product.image} alt={`Imagen de ${product.title}`} className="product-img"
+                  />
                   <p className="price">${product.price}</p>
                   <p>{product.description}</p>
                   <p><strong>{product.category}</strong></p>
                   {
-                    user && <div className="buttons">
+                    user && <div className="action">
                       <button onClick={() => handleOpenEdit(product)}>Actualizar</button>
                       <button onClick={() => handleDelete(product.id)}>Borrar</button>
                     </div>
                   }
-                </div>)
-              }
+                </div>))}
             </div>
           </div>
         </section>
