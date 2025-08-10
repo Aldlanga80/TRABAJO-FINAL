@@ -12,6 +12,7 @@ const Home = () => {
   const [descriptionEdit, setDescriptionEdit] = useState("")
   const [categoryEdit, setCategoryEdit] = useState("")
   const [imageEdit, setImageEdit] = useState("")
+  const [search, setSearch] = useState("");
 
   // simulando existencia del usuario, proximamente este estado será global
   const { user } = useAuth()
@@ -84,6 +85,10 @@ const Home = () => {
     }
   }
 
+  const filteredProducts = products.filter((product) => (product.title || "").toLowerCase().includes(search.toLowerCase()));
+
+
+
   return (
     <Layout>
       <div className="home">
@@ -111,8 +116,24 @@ const Home = () => {
         </section>
 
         <section>
-          <h2>Nuestros productos</h2>
-          <p>Elegí entre nuestras categorías más populares.</p>
+
+          <div>
+            <h2>Nuestros productos</h2>
+            <input type="text" placeholder="Buscar producto" value={search}
+              onChange={e => setSearch(e.target.value)} />
+            <ul>
+              {filteredProducts.length > 0 ? (filteredProducts.map((product) => (<li key={product.id}>
+                <img src={product.image} alt={product.title} />
+                {product.title}, ${product.price}
+              </li>))) : (
+                <p>
+                  No se encontro el producto
+                </p>
+              )}
+            </ul>
+            <p>Elegí entre nuestras categorías más populares.</p>
+          </div>
+
           <div>
             {
               showPopup && <section className="popup-edit">
