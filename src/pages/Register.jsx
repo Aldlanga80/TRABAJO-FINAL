@@ -15,13 +15,23 @@ const Register = () => {
 
     if (!username || !email || !password) {
       setError("Debes completar todos los campos")
-      return
+      return;
     }
 
     const newUser = {
       username,
       email,
-      password
+      password,
+      name: {
+        firstname: "Homero", lastname: "Simpsons",
+        address: {
+          city: "Springfield",
+          street: "Avenida Siempre Viva",
+          number: 2705,
+          zipcode: "1000",
+
+        }
+      }
     }
 
     console.log(newUser)
