@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.abouts-base {
+  background: seashell;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.title-about {
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: underline red;
+}

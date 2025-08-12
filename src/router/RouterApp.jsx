@@ -4,7 +4,7 @@ import { Dashboard } from "../pages/Dashboard"
 import { Login } from "../pages/Login"
 import { Register } from "../pages/Register"
 import { NotFound } from "../pages/NotFound"
-import { AboutUs } from "../pages/SobreNosotros"
+import { AboutUs } from "../pages/AboutUs"
 import { PrivateRoute } from "../components/PrivateRoute"
 
 const RouterApp = () => {
@@ -16,7 +16,7 @@ const RouterApp = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/registrate" element={<Register />} />
         <Route path="*" element={<NotFound />} />
-        <Route path="/sobre-nosotros" element={<AboutUs />} />
+        <Route path="/aboutUs" element={<AboutUs />} />
       </Routes>
     </BrowserRouter>
   )

@@ -1,20 +1,15 @@
-import React from "react";
 import { Layout } from "../components/Layout"
 
 const AboutUs = () => {
   return (
     <Layout>
-      <div>
-        <h1>Sobre Nosotros</h1>
-        <section>
+      <div className="abouts-base">
+        <h1 className="title-about">Sobre Nosotros</h1>
+        <section className="Section-about">
           <h2>¿De que trata el proyecto?</h2>
           <p>En este proyecto simulamos un tienda online usando la FakeStoreApi para practicar con API y aprender el registo, manejo de autenticación y navegacion.</p>
-        </section>
-        <section>
           <h2>A quién está dirigido</h2>
           <p> Este dirigido a las personas que quieren aprender sobre desarrollo wed, creacion de aplicaciones, el manejo de formulario, autenticación, con el uso de APis externas o sumaladas.</p>
-        </section>
-        <section>
           <h2>Que tecnologías o enfoque usaron</h2>
           <ul>
             <li><b>React:</b>Biblioteca para construir interfaces dinámicas con componentes.</li>

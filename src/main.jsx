@@ -10,6 +10,7 @@ import './styles/pages/Login.css'
 import './styles/pages/Register.css'
 import './styles/pages/Dashboard.css'
 import './styles/pages/NotFound.css'
+import './styles/pages/AboutUs.css'
 import './index.css';
 
 import { UserProvider } from './context/UserContext'
