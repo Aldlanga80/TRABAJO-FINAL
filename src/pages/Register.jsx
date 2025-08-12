@@ -1,14 +1,16 @@
 import { useState } from "react";
 import { Layout } from "../components/Layout";
+import { useAuth } from "../context/UserContext";
 
 const Register = () => {
+  const { register } = useAuth();
   const [username, setUsername] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
   const [success, setSuccess] = useState("")
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     setError("")
     setSuccess("")
@@ -23,24 +25,33 @@ const Register = () => {
       email,
       password,
       name: {
-        firstname: "Homero", lastname: "Simpsons",
-        address: {
-          city: "Springfield",
-          street: "Avenida Siempre Viva",
-          number: 2705,
-          zipcode: "1000",
-
+        firstname: "Jonh",
+        lastname: "Doe"
+      },
+      address: {
+        city: "Buenos Aires",
+        street: "Calle falsa",
+        number: 123,
+        zipcode: "1000",
+        geolocation: {
+          lat: "-34.6037",
+          long: "-58.3816"
         }
-      }
+      },
+      phone: "123456789"
+    };
+
+
+    try {
+      await register(newUser);
+      setSuccess("Usuario registrado con exito");
+      setUsername("");
+      setEmail("");
+      setPassword("");
+    } catch (error) {
+      setError("Hubo un problema al registrarse")
     }
-
-    console.log(newUser)
-    setSuccess("Usuario registrado con éxito")
-
-    setUsername("")
-    setEmail("")
-    setPassword("")
-  }
+  };
 
   return (
     <Layout>
