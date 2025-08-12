@@ -38,6 +38,8 @@ const Header = () => {
               <li><Link to="/login" onClick={() => setOpen(false)}>Login</Link></li>
 
               <li><Link to="/registrate" onClick={() => setOpen(false)}>Registrate</Link></li>
+
+              <li><Link to="/sobre-nosotros" onClick={() => setOpen(false)}>Sobre Nosotros</Link></li>
             </>
           }
         </ul>
