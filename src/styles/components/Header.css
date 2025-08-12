@@ -56,9 +56,10 @@
   cursor: pointer;
 }
 
-/* Hambuger Nav Movil*/
 
-@media (max-width: 768px) {
+/*Tablet =< 880px*/
+
+@media (max-width:880px) {
   .menu-btn {
     display: block;
   }
@@ -69,12 +70,12 @@
     right: 0;
     background: grey;
     flex-direction: column;
-    width: 200px;
+    width: 220px;
     padding: 10px;
     display: none;
   }
 
-  .navbar .show {
+  .navbar.show {
     display: flex;
   }
 
@@ -82,4 +83,30 @@
     flex-direction: column;
     gap: 10px;
   }
+}
+
+
+
+
+
+/* Movil*/
+
+@media (max-width:480px) {
+  .logo {
+    height: 40px;
+  }
+
+  .navbar {
+    width: 180px;
+  }
+
+  .nav-link {
+    gap: 8px;
+  }
+
+  .nav-link li a,
+  .cs-btn {
+    font-size: 14px;
+  }
+
 }
