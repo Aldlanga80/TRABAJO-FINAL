@@ -17,23 +17,27 @@ const Header = () => {
       <img className="logo" src="src/assets/Logo-Test.png" alt="imagen de logo" />
 
       <button className="menu-btn" onClick={() => setOpen(!open)} aria-label="Abrir menú" >
-
+        ☰
       </button>
 
-      <nav className="navbar">
+      <nav className={`navbar ${open ? "show" : ""}`}>
+
         <ul className="nav-link">
           {/* Cambiar elementos a por componentes Link de react-router-dom */}
           {
             user && <>
-              <li><Link to="/">Inicio</Link></li>
-              <li><Link to="/dashboard">Dashboard</Link></li>
-              <button onClick={handleLogout}>Cerrar sesión</button>
+              <li><Link to="/" onClick={() => setOpen(false)}>Inicio</Link></li>
+
+              <li><Link to="/dashboard" onClick={() => setOpen(false)}>Dashboard</Link></li>
+
+              <button onClick={handleLogout} className="cs-btn">Cerrar sesión</button>
             </>
           }
           {
             !user && <>
-              <li><Link to="/login">Login</Link></li>
-              <li><Link to="/registrate">Registrate</Link></li>
+              <li><Link to="/login" onClick={() => setOpen(false)}>Login</Link></li>
+
+              <li><Link to="/registrate" onClick={() => setOpen(false)}>Registrate</Link></li>
             </>
           }
         </ul>
