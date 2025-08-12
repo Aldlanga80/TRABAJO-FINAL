@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { Layout } from "../components/Layout";
 import { useAuth } from "../context/UserContext";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const { register } = useAuth();
+  const navigate = useNavigate();
   const [username, setUsername] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -45,6 +47,7 @@ const Register = () => {
     try {
       await register(newUser);
       setSuccess("Usuario registrado con exito");
+      setTimeout(() => { navigate("/"); }, 1000);
       setUsername("");
       setEmail("");
       setPassword("");
