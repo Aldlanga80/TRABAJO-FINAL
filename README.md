@@ -4,7 +4,7 @@ Tienda Simulada con React y FakeStoreAPI
 ## Objectivo
 Crear una pagina de comercio electrónico simulada utilizando React y FakeStoreAPI para consumir datos públicos (autenticación, usuarios), tambien funciones como registro, inicio de sesión, navegación y manejos de estados global.
 
-## Funcionalidades implementadas
+## Funcionalidades implementadas en el proyecto
 - Registro de usuarios con formulario y validación.
 - Inicio de sesión vía FakeStoreAPI (endpoint `/auth/login`).
 - Autenticación simulada con React Context (`user`, `login`, `logout`, `register`) y uso de token.
@@ -31,8 +31,4 @@ Crear una pagina de comercio electrónico simulada utilizando React y FakeStoreA
 
 5. Abrir en el navegador: 
 
-Local:   http://localhost:5173/
-
-
-   
-
+   Local http://localhost:5173/
