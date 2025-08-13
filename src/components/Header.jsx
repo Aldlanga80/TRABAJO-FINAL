@@ -14,7 +14,7 @@ const Header = () => {
   return (
     <header className="header">
 
-      <img className="logo" src="src/assets/Logo-Test.png" alt="imagen de logo" />
+      <a href="/"> <img className="logo" src="src/assets/Logo-Test.png" alt="imagen de logo" /></a>
 
       <button className="menu-btn" onClick={() => setOpen(!open)} aria-label="Abrir menú" >
         ☰
