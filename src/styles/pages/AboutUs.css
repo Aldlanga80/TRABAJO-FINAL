@@ -1,15 +1,54 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
 .abouts-base {
-  background: seashell;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
 }
 
 .title-about {
   text-align: center;
   text-transform: uppercase;
   text-decoration: underline red;
+}
+
+
+.about-ask-1 {
+  margin-bottom: 32px;
+}
+
+.about-ask-1 h2 {
+  text-decoration: underline palevioletred;
+}
+
+.about-ask-1 p {
+  font-size: 20px;
+}
+
+.about-ask-2 {
+  margin-bottom: 32px;
+}
+
+.about-ask-2 h2 {
+  text-decoration: underline green;
+  text-transform: capitalize;
+
+}
+
+.about-ask-2 p {
+  font-size: 20px;
+}
+
+
+.about-ask-3 {
+  margin-bottom: 32px;
+  font-size: large;
+}
+
+.about-ask-3 h2 {
+  text-decoration: underline blue;
+}
+
+
+.about-ask-3 li {
+  padding: 10px;
 }

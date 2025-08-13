@@ -1,0 +1,39 @@
+.notfound {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: beige;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.notfound h1 {
+  font-family: 48px;
+  color: red;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.notfound p {
+  font-size: 24px;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.home-click {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: lightskyblue;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.home-click:hover {
+  background-color: violet;
+}
